@@ -1,0 +1,25 @@
+{
+  "name": "weatherapp",
+  "version": "0.1.0",
+  "description": "A simple weather application that uses the OpenWeather API to access local weather data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrBurtyyy/WeatherApp.git"
+  },
+  "keywords": [
+    "open",
+    "source",
+    "weather",
+    "application"
+  ],
+  "author": "Alex Burt",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/MrBurtyyy/WeatherApp/issues"
+  },
+  "homepage": "https://github.com/MrBurtyyy/WeatherApp#readme"
+}
