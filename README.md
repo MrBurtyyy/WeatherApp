@@ -8,7 +8,7 @@ that are used in this project are:
 - Node.js (including the use of webpack as a build tool)
 - TypeScript
 - React.js
-- Expressjs
+- Express
 
 ## Installation
 
