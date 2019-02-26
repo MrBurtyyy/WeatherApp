@@ -4,7 +4,13 @@ const constants = require("../config/constants");
 
 module.exports = {
   mode: "development",
-  entry: constants.SOURCE_DIR + "/index.ts",
+  entry: {
+    client: constants.SOURCE_DIR + "/client/index.ts"
+  },
+  output: {
+    filename: "[name].[hash].js",
+    path: constants.BUILD_DIR
+  },
   devtool: "inline-source-map",
   module: {
     rules: [
