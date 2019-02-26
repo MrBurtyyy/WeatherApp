@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=dev && npm run clean && npm run build && concurrently 'npm:watch-js' 'npm:server'",
-    "watch-js": "webpack -p --env.dev --watch",
+    "watch-js": "webpack --env.dev --watch",
     "server": "node dist/bundle.js",
-    "build": "webpack -p --env.dev",
+    "build": "webpack --env.dev",
     "clean": "rimraf dist"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
+    "@types/node": "^11.9.5",
     "express": "^4.16.4"
   }
 }

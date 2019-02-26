@@ -3,6 +3,7 @@ const path = require("path");
 const constants = require("../config/constants");
 
 module.exports = {
+  mode: "development",
   entry: constants.SOURCE_DIR + "/index.ts",
   devtool: "inline-source-map",
   module: {
