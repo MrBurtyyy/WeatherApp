@@ -17,3 +17,9 @@ Node dependencies will need to be installed
 ```bash
 npm install
 ```
+
+## Required Environment Variables
+
+```bash
+OPEN_WEATHER_API_KEY - Your OpenWeather API Key
+```
