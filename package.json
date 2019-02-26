@@ -4,7 +4,8 @@
   "description": "A simple weather application that uses the OpenWeather API to access local weather data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,15 @@
   "bugs": {
     "url": "https://github.com/MrBurtyyy/WeatherApp/issues"
   },
-  "homepage": "https://github.com/MrBurtyyy/WeatherApp#readme"
+  "homepage": "https://github.com/MrBurtyyy/WeatherApp#readme",
+  "devDependencies": {
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.13.0",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
