@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { isUndefined } from "./utils";
+import { OpenWeather } from "./openweather";
 
 const latMin = -90;
 const latMax = 90;
@@ -11,8 +12,8 @@ export class Routes {
     req: Request,
     res: Response
   ): void {
-    const lat = req.query["lat"];
-    const long = req.query["long"];
+    const lat: number = req.query["lat"];
+    const long: number = req.query["long"];
 
     // Make sure that the values we have pulled from the query parameters are:
     // 1. Not undefined (i.e. not supplied)
@@ -29,9 +30,11 @@ export class Routes {
       return;
     }
 
+    const openWeather: OpenWeather = req.app.locals["open_weather"];
+
     console.log("Latitude: ", lat);
     console.log("Longitude: ", long);
 
-    res.send("Hello World");
+    openWeather.byLatLong(lat, long).then(data => res.send(data));
   };
 }
