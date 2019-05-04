@@ -9,6 +9,7 @@ export const loadFromEnvironmentVariable = function(envVar: string): any {
 };
 
 /**
+ * @deprecated
  * Checks if supplied object is undefined or not.
  * @param objToCheck The object to check
  * @returns True/False

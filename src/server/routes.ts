@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
-import { isUndefined } from "./utils";
 import { OpenWeather } from "./openweather";
-import _ from "lodash";
+import * as _ from "lodash";
 
 const latMin = -90;
 const latMax = 90;
@@ -19,8 +18,8 @@ export class Routes {
     // Make sure that the values we have pulled from the query parameters are:
     // 1. Not undefined (i.e. not supplied)
     // 2. Are inbetween their ranges
-    let latValid = !isUndefined(lat) && lat >= latMin && lat <= latMax;
-    let longValid = !isUndefined(long) && long >= longMin && long <= longMax;
+    let latValid = !_.isUndefined(lat) && lat >= latMin && lat <= latMax;
+    let longValid = !_.isUndefined(long) && long >= longMin && long <= longMax;
 
     // Make sure that both of the inputs are valid,
     // and return an error if not.
