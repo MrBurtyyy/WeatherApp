@@ -13,7 +13,7 @@ export class Routes {
     res: Response
   ): void {
     const lat: number = req.query["lat"];
-    const long: number = req.query["long"];
+    const long: number = req.query["lon"];
 
     // Make sure that the values we have pulled from the query parameters are:
     // 1. Not undefined (i.e. not supplied)
