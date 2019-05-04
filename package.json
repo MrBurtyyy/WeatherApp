@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/MrBurtyyy/WeatherApp#readme",
   "devDependencies": {
+    "@types/lodash": "^4.14.123",
     "concurrently": "^4.1.0",
     "rimraf": "^2.6.3",
     "ts-loader": "^5.3.3",

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { isUndefined } from "./utils";
 import { OpenWeather } from "./openweather";
+import _ from "lodash";
 
 const latMin = -90;
 const latMax = 90;
