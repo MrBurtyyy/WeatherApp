@@ -1,31 +1,58 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const constants = require("../config/constants");
 
 module.exports = {
   mode: "development",
   entry: {
-    client: constants.SOURCE_DIR + "/client/index.ts"
+    client: constants.SOURCE_DIR + "/client/index.js"
   },
   output: {
     filename: "[name].[hash].js",
-    path: constants.BUILD_DIR
+    path: constants.BUILD_DIR + "/public"
   },
   devtool: "inline-source-map",
   module: {
     rules: [
       {
-        test: /\.ts?$/,
-        use: "ts-loader",
-        exclude: /node_modules/
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ]
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
       }
     ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: ["*", ".js", ".jsx"]
   },
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(constants.BUILD_DIR)
-  }
+  devServer: {
+    port: 3000,
+    open: true,
+    proxy: {
+      "/api": "http://localhost:8080"
+    }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html"
+    })
+  ]
 };
