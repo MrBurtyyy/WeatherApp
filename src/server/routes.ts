@@ -1,6 +1,10 @@
 import { Request, Response } from "express";
-import { OpenWeather } from "./openweather";
 import * as _ from "lodash";
+
+import { OpenWeather } from "./openweather";
+import { LoggerFactory } from "./logFactory";
+
+const logger = LoggerFactory.getLogger();
 
 const latMin = -90;
 const latMax = 90;
@@ -31,9 +35,6 @@ export class Routes {
     }
 
     const openWeather: OpenWeather = req.app.locals["open_weather"];
-
-    console.log("Latitude: ", lat);
-    console.log("Longitude: ", long);
 
     openWeather.byLatLong(lat, long).then(data => res.send(data));
   };

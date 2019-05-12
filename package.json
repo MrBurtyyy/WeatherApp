@@ -8,6 +8,7 @@
     "start": "NODE_ENV=dev && npm run clean && npm run build && concurrently 'npm:watch-js' 'npm:server'",
     "watch-js": "webpack --env.dev --watch",
     "server": "tsnd src/server/app.ts",
+    "build:server": "tsc --outDir dist/server src/server/*",
     "build": "webpack --env.dev",
     "clean": "rimraf dist"
   },
@@ -44,6 +45,7 @@
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
-    "log4js": "^4.1.0"
+    "log4js": "^4.1.0",
+    "moment": "^2.24.0"
   }
 }
