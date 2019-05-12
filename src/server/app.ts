@@ -12,7 +12,7 @@ import { logAllRequests } from "./middleware";
 const logger: Logger = LoggerFactory.getLogger();
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const open_weather_api_key = loadFromEnvironmentVariable(
   "OPEN_WEATHER_API_KEY"
