@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Container } from "reactstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./scss/index.scss";
 
 class App extends Component {
   constructor(props) {
@@ -10,8 +12,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello World</h1>
+      <div className="wrapper">
+        <Container fluid>
+          <h5>Hello World</h5>
+        </Container>
       </div>
     );
   }
